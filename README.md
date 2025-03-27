@@ -12,34 +12,49 @@ Parabéns, você está fazendo parte de um teste para concorrer a uma vaga de SR
 
    Resposta:
       top -> Para monitorar o consumo em tempo real do servidor e analisar processos que podem estar consumindo recurso mais do que o normal.
+
       ps -> Para fazer a listagem dos processos que estão em execução
+
       kill -> Para finalizar o processo que está causando o alto consumo ou está travado.
+
       htop -> Uma versão melhorada do top mencionado a cima.
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------      
 2. Explique o significado completo da seguinte saída do comando ls -l (-rwxr-x--- 1 devops users 1024 Mar 25 12:00 script.sh)
+
    Resposta: Este comando irá mostrar os detalhes do arquivo script.sh, não tera permissão para executar porém apenas lista, vale ressaltar que o comando deve contar as aspas ("") para ser executado corretamente.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------     
 3. Quais comandos você utiliza para avaliar possíveis problemas em cpu,memória,disco,rede em sistemas operacionais linux
 
    Resposta:
       CPU -> top ou htop.
+
       Memoria -> free, top e htop.
+
       Disco -> df, df -h e du.
+
       Rede -> netstat, ping, telnet e nslookup.
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------      
 4. Explique a diferença entre topologia física e topologia lógica de uma rede. Dê um exemplo de cada uma.
 
    Resposta:
       A topologia física depende de ferramentas físicas, como um datacenter local ao contrario da topologia lógica que não necessita de algo físico.
+
       Topologia física -> Um datacenter com servidores ligados nele.
+
       Topologia lógica -> Uma VPN que usa criptografia.
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 5. Quais são as principais características das topologias de rede estrela, anel e malha? Cite vantagens e desvantagens de cada uma.
 
    Resposta:
       Rede Estrela -> Todos dispositivos conectado por um switch ou hub, uma vantadem é a facilidade de adicionar ou remover dispositivos e a desvantagem é o custo se caso a rede for de grande escala
+
       Anel -> Dispositivos são conectados em círculo, a vantagem se manter estável com tráfego alto já a desvatagem é ser mais trabalhoso adicionar ou remover dispositivos.
+
       Malha -> Conecta todos os dispositivos em si formando uma malha a vantagem é ser ótima para redes robustas por ser rápida e confiavel a desvantagem é ser mais cara que outras topologias.
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 6. Por que a topologia em malha é frequentemente utilizada em ambientes críticos, como data centers e infraestrutura de nuvem? Como ela contribui para a resiliência da rede?
 
@@ -76,8 +91,11 @@ Parabéns, você está fazendo parte de um teste para concorrer a uma vaga de SR
 
    Resposta: 
       $1 -> Referece ao primeiro argumento passado
+
       $@ -> Se refere a todos os argumentos
+
       $# -> Contém um número total dos argumentos 
+      
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 13. Explique como você faria um dump de um banco de dados Mysql e quais informações precisaria para isso.
 
