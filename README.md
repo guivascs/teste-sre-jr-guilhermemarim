@@ -14,6 +14,7 @@ Parabéns, você está fazendo parte de um teste para concorrer a uma vaga de SR
       ps -> Para fazer a listagem dos processos que estão em execução
       kill -> Para finalizar o processo que está causando o alto consumo ou está travado.
       htop -> Uma versão melhorada do top mencionado a cima.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------      
 2. Explique o significado completo da seguinte saída do comando ls -l (-rwxr-x--- 1 devops users 1024 Mar 25 12:00 script.sh)
    Resposta: Este comando irá mostrar os detalhes do arquivo script.sh, não tera permissão para executar porém apenas lista, vale ressaltar que o comando deve contar as aspas ("") para ser executado corretamente.  
 3. Quais comandos você utiliza para avaliar possíveis problemas em cpu,memória,disco,rede em sistemas operacionais linux
