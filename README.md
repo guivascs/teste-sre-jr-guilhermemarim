@@ -121,6 +121,10 @@ Parabéns, você está fazendo parte de um teste para concorrer a uma vaga de SR
 - Suba o script `monitor_processes.sh` no GitHub.  
 - Adicione um arquivo `README.md` explicando como configurar o `cron` para rodar o script.  
 
+### Configurando o cron
+- execute o chamado crontab -e
+- adicione a linha */5 * * * * /caminho_do_arquivo/monitor_processes.sh no arquivo, lembre-se de trocar o caminho do arquivo.
+
 ---
 
 ## Desafio 2: Permissões e Segurança
