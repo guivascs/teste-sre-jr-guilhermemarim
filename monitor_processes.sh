@@ -1,40 +1,29 @@
 #!/bin/bash
 
+touch "$(pwd)/monitor_process_monitor.log" #criacao de arquivo de log
+$FILE_LOG="$(pwd)/monitor_process_monitor.log" # Define o caminho do arquivo de log
 
-#criacao de arquivo de log
-touch "$(pwd)/monitor_process_monitor.log"
+echo "=== Ultima atualizacao $(date '+%d/%m/%Y %H:%M:%S') ===" >> $FILE_LOG # Registra a data/hora atual no log
 
-# Define o caminho do arquivo de log
-LOG_FILE="$(pwd)/monitor_process_monitor.log"
+echo -e "\n" >> $FILE_LOG # Adiciona espaçamento entre as seções
 
-# Registra a data/hora atual no log
-echo "=== Ultima atualizacao $(date '+%d/%m/%Y %H:%M:%S') ===" >> $LOG_FILE
+echo -e "Load Average: $(uptime | awk -F 'load average: ' '{print $2}')\n" >> $FILE_LOG #Consumo de CPU 
 
-# Adiciona espaçamento entre as seções
-echo -e "\n" >> $LOG_FILE
+echo -e "\n=================================\n" >> $FILE_LOG
 
-#Consumo de CPU 
-echo -e "Load Average: $(uptime | awk -F 'load average: ' '{print $2}')\n" >> $LOG_FILE
+free -h | awk '/Mem:/ {print "Memória Livre: "$4} /Swap:/ {print "Swap Livre: "$4}' >> $FILE_LOG #consumo de memoria
 
-#Adiciona separacao
-echo -e "\n=================================\n" >> $LOG_FILE
+echo -e "\n=================================\n" >> $FILE_LOG
 
-#consumo de memoria
-free -h | awk '/Mem:/ {print "Memória Livre: "$4} /Swap:/ {print "Swap Livre: "$4}' >> $LOG_FILE
+# processos de CPU
+echo "Os 5 processos que mais esta consumindo CPU:" >> $FILE_LOG
+ps -eo pid,cmd,%mem,%cpu --sort=-%cpu | head -n 6 >> $FILE_LOG
 
-#Adiciona separacao
-echo -e "\n=================================\n" >> $LOG_FILE
+#
+echo -e "\n" >> $FILE_LOG
 
-# Lista os 5 processos que mais consomem CPU
-echo "Os 5 processos que mais esta consumindo CPU:" >> $LOG_FILE
-ps -eo pid,cmd,%mem,%cpu --sort=-%cpu | head -n 6 >> $LOG_FILE
+# processos memoria
+echo "Os 5 processos que mais esta consumindo Memória:" >> $FILE_LOG
+ps -eo pid,cmd,%mem,%cpu --sort=-%mem | head -n 6 >> $FILE_LOG
 
-# Adiciona espaçamento entre as seções
-echo -e "\n" >> $LOG_FILE
-
-# Lista os 5 processos que mais consomem memória
-echo "Os 5 processos que mais esta consumindo Memória:" >> $LOG_FILE
-ps -eo pid,cmd,%mem,%cpu --sort=-%mem | head -n 6 >> $LOG_FILE
-
-# Adiciona separador final
-echo -e "\n=================================\n" >> $LOG_FILE
+echo -e "\n=================================\n" >> $FILE_LOG
