@@ -216,3 +216,7 @@ Crie um projeto no Terraform que provisione a seguinte infraestrutura **AWS**
 3. **Registro no Route 53**
    - Criar um domínio e registro fazendo apontamento para o ALB
    - O domínio pode ser simulado, sem necessidade de um domínio real
+
+### Exemplo 
+
+Não consegui evoluir com a criação do ALB e do Route 53 por terraform   
