@@ -139,6 +139,9 @@ Parabéns, você está fazendo parte de um teste para concorrer a uma vaga de SR
 - Suba o script `user_setup.sh` no GitHub.  
 - Adicione um arquivo `README.md` explicando o que o script faz e como usá-lo.  
 
+### Explicaçao
+- O codigo ira fazer a criação de usuário e suas chaves, e informando qual seria a cheve necessária para fazer o login via ssh com o usuário.
+
 ---
 
 ## Desafio 3: Monitoramento de Uso de Disco
@@ -148,6 +151,9 @@ Parabéns, você está fazendo parte de um teste para concorrer a uma vaga de SR
   - Verifique o uso do disco em **`/`**.  
   - Caso o uso esteja acima de **80%**, registre um alerta em um arquivo `disk_alert.log`.  
   - Caso o uso esteja abaixo de **80%**, registre uma mensagem informando que o disco está com espaço suficiente.  
+
+### Explicação
+- Codigo executado ira mostrar o caminho do arquivo de log e o log ira mostrar o consumo de disco.
 
 ---
 

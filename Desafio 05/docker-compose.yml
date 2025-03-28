@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3100:3100"
+    environment:
+      DB_HOST: db_mysql
+      DB_USER: root_db
+      DB_PASSWORD: db_mysql_pwd
+      DB_NAME: app
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: sql_root_pwd
+      MYSQL_DATABASE: app
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
